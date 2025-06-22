@@ -1,69 +1,68 @@
-/* --------- base ---------- */
-*{box-sizing:border-box;padding:0;margin:0}
-body{font-family:'Poppins',sans-serif;color:#333;background:#fafafa}
-img{max-width:100%;display:block}
+/* ---------- Base ---------- */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;background:#f9f9fb;color:#333}
 h1,h2,h3{font-weight:700}
 a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.btn{padding:.75rem 1.25rem;border:none;border-radius:6px;cursor:pointer;font-weight:500}
+.btn.primary{background:#0d79ff;color:#fff}
 
-.btn{padding:.75rem 1.25rem;border:none;border-radius:6px;cursor:pointer}
-.btn.primary{background:#6c5ce7;color:#fff}
+/* ---------- Hero ---------- */
+.hero{background:#0d79ff;color:#fff;text-align:center;padding:3rem 1rem}
+.tagline{font-size:1.35rem;margin-bottom:1rem}
+.scroll-btn{background:#6c5ce7}
 
-/* -------- hero -------- */
-.hero{background:#0d79ff;color:#fff;padding:3rem 1rem;text-align:center}
-.hero-title{font-size:1.4rem;margin-bottom:1rem}
-.scroll-demo{margin-top:.5rem}
+/* ---------- Phone Mock-up ---------- */
+.mockup-wrapper{padding:4rem 0;display:flex;justify-content:center}
+.device{width:290px;height:570px;background:#111;border-radius:32px;padding:16px;box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.device-inner{width:100%;height:100%;background:#fff;border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
 
-/* ---- phone mock-up ---- */
-.mockup-section{padding:4rem 0;display:flex;justify-content:center}
-.iphone-frame{position:relative;width:280px}
-.frame-img{width:100%}
-.screen{position:absolute;top:7.5%;left:7.3%;width:85%;height:85%;overflow:hidden;border-radius:24px;background:#fff;display:flex;flex-direction:column}
+/* Notch (pseudo) */
+.device::before{content:'';position:absolute;top:12px;left:50%;transform:translateX(-50%);width:110px;height:26px;background:#111;border-radius:0 0 18px 18px}
 
-/* ------ in-app UI ------ */
-.app-nav{background:#0d79ff;color:#fff;padding:.4rem .75rem;display:flex;align-items:center;gap:1rem;font-size:.8rem}
-.logo{font-weight:700;font-size:1rem}
-.nav-toggle{background:none;border:none;color:#fff;font-size:1rem;display:none}
-.nav-links{display:flex;gap:.75rem;list-style:none}
-.nav-links a{white-space:nowrap;font-size:.75rem}
+/* ---------- In-app UI ---------- */
+.app-nav{display:flex;align-items:center;gap:1rem;background:#0d79ff;color:#fff;padding:.45rem .8rem;font-size:.78rem;position:relative}
+.logo{font-size:1.05rem;font-weight:700}
+.hamburger{background:none;border:none;color:#fff;font-size:1rem;margin-left:auto;display:none}
+.nav-items{display:flex;gap:.75rem;list-style:none}
 .dropdown{position:relative}
-.drop-btn{display:flex;align-items:center;gap:.25rem}
-.dropdown-menu{position:absolute;top:110%;left:0;min-width:130px;background:#fff;color:#333;border-radius:6px;box-shadow:0 4px 10px rgba(0,0,0,.08);list-style:none;padding:.5rem .25rem;display:none}
-.dropdown-menu li{padding:.25rem}
-.dropdown.open .dropdown-menu{display:block}
+.drop-toggle{display:flex;align-items:center;gap:.25rem}
+.drop-menu{display:none;position:absolute;top:100%;left:0;background:#fff;color:#333;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.1);list-style:none;padding:.5rem .4rem;font-size:.75rem;min-width:130px}
+.dropdown.open .drop-menu{display:block}
 
-/* banner */
-.banner{background:#6c5ce7;color:#fff;font-weight:700;padding:1.5rem .75rem;font-size:1.35rem;line-height:1.2}
+/* Purple banner */
+.banner{background:#6c5ce7;color:#fff;padding:1.3rem .9rem;font-size:1.35rem;line-height:1.15;font-weight:700}
 
-/* coupon area */
-.coupon-block{flex:1;padding:.75rem;overflow-y:auto}
-.coupon-block h2{font-size:1.05rem;margin:.8rem 0 .3rem}
+/* Coupon area */
+.coupons{flex:1;overflow-y:auto;padding:.8rem}
+.coupons h2{font-size:1.05rem;margin:.9rem 0 .45rem}
 
-/* card row */
-.card-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;margin-bottom:1rem}
-.cards{display:flex;gap:.75rem;overflow-x:auto;scroll-behavior:smooth}
-.scroll-btn{background:none;border:none;font-size:1.1rem;color:#6c5ce7;padding:.25rem .5rem;cursor:pointer}
-.scroll-btn:disabled{opacity:.3;cursor:default}
+/* Card row */
+.row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;margin-bottom:1rem}
+.cards{display:flex;gap:.8rem;overflow-x:auto;scroll-behavior:smooth}
+.arrow{background:none;border:none;font-size:1.1rem;color:#6c5ce7;padding:.25rem .45rem;cursor:pointer}
+.arrow:disabled{opacity:.35;cursor:default}
 
-/* card */
-.card{min-width:140px;background:#fff;border-radius:8px;padding:.8rem .7rem;box-shadow:0 2px 6px rgba(0,0,0,.06);flex:none}
-.card-logo{width:28px;height:28px;margin-bottom:.4rem}
+/* Card */
+.card{min-width:145px;background:#fff;border-radius:8px;padding:.8rem .75rem;box-shadow:0 2px 6px rgba(0,0,0,.07);flex:none}
+.logo-img{width:28px;height:28px;margin-bottom:.5rem}
 .card h3{font-size:.78rem;min-height:34px}
-.card p{font-size:.64rem;margin:.25rem 0 .5rem}
-.card-actions{display:flex;gap:.6rem}
-.card-actions button{background:none;border:none;font-size:.8rem;color:#777;display:flex;align-items:center;gap:.2rem;cursor:pointer}
-.card-actions .active{color:#0d79ff}
+.card p{font-size:.64rem;margin:.25rem 0 .55rem}
+.actions{display:flex;gap:.55rem}
+.actions button{background:none;border:none;color:#777;font-size:.78rem;display:flex;align-items:center;gap:.2rem;cursor:pointer}
+.actions .active{color:#0d79ff}
 
-/* modal */
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;justify-content:center;align-items:center;z-index:50}
+/* ---------- Modal ---------- */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.4);display:flex;justify-content:center;align-items:center;z-index:999}
 .modal.hidden{display:none}
-.modal-content{background:#fff;width:90%;max-width:320px;padding:1rem;border-radius:10px;position:relative}
-.close{position:absolute;right:12px;top:8px;font-size:1.1rem;cursor:pointer}
-textarea{width:100%;height:90px;resize:none;margin:.75rem 0;padding:.5rem;border:1px solid #ccc;border-radius:4px}
-.submit-comment{width:100%}
+.modal-box{background:#fff;border-radius:10px;width:90%;max-width:320px;padding:1rem;position:relative}
+.close{position:absolute;top:8px;right:12px;font-size:1.1rem;cursor:pointer}
+textarea{width:100%;height:90px;border:1px solid #ccc;border-radius:6px;padding:.5rem;margin:.9rem 0 .75rem;font-family:inherit}
+.submit{width:100%}
 
-/* ------- responsive tweaks ------- */
-@media (max-width:420px){
-  .nav-links{display:none}
-  .nav-toggle{display:block;margin-left:auto}
-  .app-nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;width:100%;background:#0d79ff;padding:.5rem 0}
+/* ---------- Responsive ---------- */
+@media(max-width:420px){
+  .nav-items{display:none}
+  .hamburger{display:block}
+  .app-nav.open .nav-items{display:flex;flex-direction:column;gap:.5rem;position:absolute;top:100%;left:0;width:100%;background:#0d79ff;padding:.5rem 0}
 }
