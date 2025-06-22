@@ -1,121 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Dabbl • Deals on the latest brand names</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <!-- Google Font + Font Awesome icons -->
+  <meta charset="utf-8">
+  <title>Dabbl • Discover Savings Instantly</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- HERO / TOP STRIP -->
-  <header class="hero">
-    <h1 class="tagline">Act fast! Big savings on your favorite brands are here.</h1>
-    <button class="btn primary scroll-btn">Launch Interactive Demo</button>
-  </header>
+  <!-- ===== TECH-GRADIENT WRAPPER ===== -->
+  <div class="gradient">
 
-  <!-- PHONE MOCK-UP SECTION -->
-  <section id="demo" class="mockup-wrapper">
-    <div class="device">
-      <div class="device-inner">
-        <!-- ===== IN-APP INTERFACE ===== -->
-        <nav class="app-nav">
-          <span class="logo">Dabbl</span>
-          <button class="hamburger"><i class="fas fa-bars"></i></button>
+    <!-- ===== SPLIT SCREEN ===== -->
+    <main class="split">
 
-          <ul class="nav-items">
-            <li class="dropdown">
-              <a href="#" class="drop-toggle">All&nbsp;Categories <i class="fas fa-chevron-down"></i></a>
-              <ul class="drop-menu">
-                <li><a href="#">Popular Deals</a></li>
-                <li><a href="#">Laptops</a></li>
-                <li><a href="#">Shoes</a></li>
-                <li><a href="#">Toys&nbsp;&amp;&nbsp;Games</a></li>
+      <!-- ◀ LEFT PANE — Marketing copy -->
+      <section class="hero-copy">
+        <h1>Dabbl <span class="highlight">Deals</span></h1>
+        <p class="subtext">
+          The AI-powered coupon companion that hunts<br>
+          the web for discounts so <em>you</em> don’t have to.
+        </p>
+
+        <div class="store-badges">
+          <!-- Replace with official badges if you have them locally -->
+          <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"></a>
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play"></a>
+        </div>
+
+        <button class="btn primary scroll-demo">Try the Live Prototype</button>
+      </section>
+
+      <!-- ▶ RIGHT PANE — Phone mock-up -->
+      <section id="demo" class="mockup">
+        <div class="device">
+          <div class="screen">
+
+            <!-- ── TOP STATUS BAR (blue strip with tagline/icons) -->
+            <div class="status">
+              <span class="status-text">Act fast! Big savings on your favorite brands are here.</span>
+              <div class="status-icons">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-share-nodes"></i>
+                <i class="fas fa-comments"></i>
+              </div>
+            </div>
+
+            <!-- ── NAV BAR -->
+            <nav class="app-nav">
+              <span class="logo">Dabbl</span>
+
+              <ul class="nav-primary">
+                <li class="dropdown">
+                  <button class="drop-btn">
+                    All Categories <i class="fas fa-chevron-down"></i>
+                  </button>
+                  <ul class="drop-menu">
+                    <li><a href="#">Popular Deals</a></li>
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Toys &amp; Games</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Appliances</a></li>
+                <li><a href="#">Electronics</a></li>
               </ul>
-            </li>
-            <li><a href="#">Fashion</a></li>
-            <li><a href="#">Appliances</a></li>
-            <li><a href="#">Electronics</a></li>
-          </ul>
-        </nav>
+            </nav>
 
-        <!-- Purple banner -->
-        <div class="banner">Save on the latest<br>brand&nbsp;names.</div>
+            <!-- ── Purple banner -->
+            <div class="banner">Save on the latest<br>brand names.</div>
 
-        <!-- 1st Coupon Row -->
-        <section class="coupons">
-          <h2>Discover Savings</h2>
-          <div class="row" data-row>
-            <button class="arrow left" aria-label="scroll left"><i class="fas fa-chevron-left"></i></button>
+            <!-- ── Coupon rows -->
+            <section class="coupons">
+              <h2>Discover Savings</h2>
+              <div class="card-row" data-row>
+                <button class="arrow left"><i class="fas fa-chevron-left"></i></button>
+                <div class="cards">
+                  <!-- Domino’s card -->
+                  <article class="card">
+                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/dominos.svg" alt="Domino's" class="logo-img">
+                    <h3>20% off your purchase</h3>
+                    <p>Get 20 % off at XYZ store with this coupon.</p>
+                    <div class="actions">
+                      <button class="like"><i class="fas fa-thumbs-up"></i><span>0</span></button>
+                      <button class="comment"><i class="fas fa-comment"></i></button>
+                    </div>
+                  </article>
 
-            <div class="cards">
-              <!-- Domino’s -->
-              <article class="card">
-                <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/dominos.svg" class="logo-img" alt="Domino's">
-                <h3>20% off your purchase</h3>
-                <p>Get 20 % off at XYZ store with this coupon.</p>
-                <div class="actions">
-                  <button class="like"><i class="fas fa-thumbs-up"></i> <span>0</span></button>
-                  <button class="comment"><i class="fas fa-comment"></i></button>
+                  <!-- Starbucks card -->
+                  <article class="card">
+                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/starbucks.svg" alt="Starbucks" class="logo-img">
+                    <h3>20% off your purchase</h3>
+                    <p>Get 20 % off at XYZ store with this coupon.</p>
+                    <div class="actions">
+                      <button class="like"><i class="fas fa-thumbs-up"></i><span>0</span></button>
+                      <button class="comment"><i class="fas fa-comment"></i></button>
+                    </div>
+                  </article>
                 </div>
-              </article>
+                <button class="arrow right"><i class="fas fa-chevron-right"></i></button>
+              </div>
 
-              <!-- Starbucks -->
-              <article class="card">
-                <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/starbucks.svg" class="logo-img" alt="Starbucks">
-                <h3>20% off your purchase</h3>
-                <p>Get 20 % off at XYZ store with this coupon.</p>
-                <div class="actions">
-                  <button class="like"><i class="fas fa-thumbs-up"></i> <span>0</span></button>
-                  <button class="comment"><i class="fas fa-comment"></i></button>
+              <h2>Top Picks</h2>
+              <div class="card-row" data-row>
+                <button class="arrow left"><i class="fas fa-chevron-left"></i></button>
+                <div class="cards">
+                  <article class="card">
+                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/victoriassecret.svg" alt="Victoria's Secret" class="logo-img">
+                    <h3>20% off your purchase</h3>
+                    <p>Get 20 % off at XYZ store with this coupon.</p>
+                    <div class="actions">
+                      <button class="like"><i class="fas fa-thumbs-up"></i><span>0</span></button>
+                      <button class="comment"><i class="fas fa-comment"></i></button>
+                    </div>
+                  </article>
+                  <article class="card">
+                    <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hm.svg" alt="H&M" class="logo-img">
+                    <h3>20% off your purchase</h3>
+                    <p>Get 20 % off at XYZ store with this coupon.</p>
+                    <div class="actions">
+                      <button class="like"><i class="fas fa-thumbs-up"></i><span>0</span></button>
+                      <button class="comment"><i class="fas fa-comment"></i></button>
+                    </div>
+                  </article>
                 </div>
-              </article>
+                <button class="arrow right"><i class="fas fa-chevron-right"></i></button>
+              </div>
+            </section>
 
-              <!-- Add more cards here -->
-            </div>
+            <!-- ── BOTTOM NAV BAR (new) -->
+            <nav class="bottom-nav">
+              <button class="tab active"><i class="fas fa-house"></i><span>Home</span></button>
+              <button class="tab"><i class="fas fa-search"></i><span>Search</span></button>
+              <button class="tab"><i class="fas fa-bag-shopping"></i><span>Cart</span></button>
+              <button class="tab"><i class="fas fa-user"></i><span>Profile</span></button>
+            </nav>
 
-            <button class="arrow right" aria-label="scroll right"><i class="fas fa-chevron-right"></i></button>
-          </div>
+          </div><!-- /.screen -->
+        </div><!-- /.device -->
+      </section>
 
-          <!-- 2nd Coupon Row -->
-          <h2>Top Picks</h2>
-          <div class="row" data-row>
-            <button class="arrow left" aria-label="scroll left"><i class="fas fa-chevron-left"></i></button>
+    </main><!-- /split -->
+  </div><!-- /gradient wrapper -->
 
-            <div class="cards">
-              <article class="card">
-                <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/victoriassecret.svg" class="logo-img" alt="Victoria's Secret">
-                <h3>20% off your purchase</h3>
-                <p>Get 20 % off at XYZ store with this coupon.</p>
-                <div class="actions">
-                  <button class="like"><i class="fas fa-thumbs-up"></i> <span>0</span></button>
-                  <button class="comment"><i class="fas fa-comment"></i></button>
-                </div>
-              </article>
-
-              <article class="card">
-                <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hm.svg" class="logo-img" alt="H&M">
-                <h3>20% off your purchase</h3>
-                <p>Get 20 % off at XYZ store with this coupon.</p>
-                <div class="actions">
-                  <button class="like"><i class="fas fa-thumbs-up"></i> <span>0</span></button>
-                  <button class="comment"><i class="fas fa-comment"></i></button>
-                </div>
-              </article>
-            </div>
-
-            <button class="arrow right" aria-label="scroll right"><i class="fas fa-chevron-right"></i></button>
-          </div>
-        </section>
-        <!-- ===== /IN-APP ===== -->
-      </div>
-    </div>
-  </section>
-
-  <!-- COMMENT MODAL -->
+  <!-- ===== COMMENT MODAL ===== -->
   <div id="modal" class="modal hidden">
     <div class="modal-box">
       <span class="close">&times;</span>
@@ -125,6 +158,35 @@
     </div>
   </div>
 
+  <!-- ===== WORDPRESS-STYLE FOOTER ===== -->
+  <footer class="wp-footer">
+    <div class="footer-inner">
+      <div>
+        <h4>About Dabbl</h4>
+        <ul>
+          <li><a href="#">Mission</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <ul class="social">
+          <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">Proudly powered by WordPress • © 2025 Dabbl</p>
+  </footer>
+
+  <!-- Scripts -->
   <script src="app.js"></script>
 </body>
 </html>
