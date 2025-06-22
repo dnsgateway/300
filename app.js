@@ -1,58 +1,59 @@
-// Smooth-scroll to demo
-document.querySelector('.scroll-demo').addEventListener('click', () => {
-  document.querySelector('#demo').scrollIntoView({behavior: 'smooth'});
+/* Smooth-scroll to phone */
+document.querySelector('.scroll-btn').addEventListener('click',()=>{
+  document.querySelector('#demo').scrollIntoView({behavior:'smooth'});
 });
 
-/* ---------- nav interactions ---------- */
-const navToggle = document.querySelector('.nav-toggle');
-const appNav   = document.querySelector('.app-nav');
-navToggle?.addEventListener('click', () => appNav.classList.toggle('open'));
+/* Hamburger toggle */
+const navBar = document.querySelector('.app-nav');
+document.querySelector('.hamburger').addEventListener('click',()=>{
+  navBar.classList.toggle('open');
+});
 
-document.querySelectorAll('.dropdown .drop-btn').forEach(btn=>{
-  btn.addEventListener('click', e=>{
+/* Dropdown inside nav */
+document.querySelectorAll('.drop-toggle').forEach(tog=>{
+  tog.addEventListener('click',e=>{
     e.preventDefault();
-    btn.parentElement.classList.toggle('open');
+    tog.parentElement.classList.toggle('open');
   });
 });
 
-/* ---------- scrolling rows ---------- */
+/* Horizontal scroll controls */
 document.querySelectorAll('[data-row]').forEach(row=>{
+  const track = row.querySelector('.cards');
   const left  = row.querySelector('.left');
   const right = row.querySelector('.right');
-  const track = row.querySelector('.cards');
-  const step  = 160;
+  const STEP  = 170;
 
-  const update = () => {
-    left.disabled  = track.scrollLeft <= 4;
-    right.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
-  };
-  update();
+  function updateArrows(){
+    left.disabled  = track.scrollLeft<=4;
+    right.disabled = track.scrollLeft>=track.scrollWidth-track.clientWidth-4;
+  }
+  updateArrows();
 
-  left && left.addEventListener('click', ()=>{track.scrollBy({left:-step,behavior:'smooth'});});
-  right&& right.addEventListener('click', ()=>{track.scrollBy({left: step,behavior:'smooth'});});
-  track.addEventListener('scroll', update);
+  left && left.addEventListener('click',()=>{track.scrollBy({left:-STEP,behavior:'smooth'})});
+  right&& right.addEventListener('click',()=>{track.scrollBy({left: STEP,behavior:'smooth'})});
+  track.addEventListener('scroll',updateArrows);
 });
 
-/* ---------- like & comment ---------- */
-document.querySelectorAll('.thumb').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
+/* Like buttons */
+document.querySelectorAll('.like').forEach(btn=>{
+  btn.addEventListener('click',()=>{
     const span = btn.querySelector('span');
-    let count  = +span.textContent;
-    if(btn.classList.toggle('active')) count++; else count--;
-    span.textContent = count;
+    let n = +span.textContent;
+    if(btn.classList.toggle('active')) n++; else n--;
+    span.textContent = n;
   });
 });
 
-const modal = document.getElementById('commentModal');
-const close = modal.querySelector('.close');
+/* Comment modal */
+const modal = document.getElementById('modal');
 document.querySelectorAll('.comment').forEach(btn=>{
-  btn.addEventListener('click', ()=>{ modal.classList.remove('hidden'); });
+  btn.addEventListener('click',()=> modal.classList.remove('hidden'));
 });
-close.addEventListener('click', ()=> modal.classList.add('hidden'));
-modal.addEventListener('click', e=>{ if(e.target===modal) modal.classList.add('hidden'); });
-
-document.querySelector('.submit-comment').addEventListener('click', ()=>{
-  modal.querySelector('textarea').value='';
+modal.querySelector('.close').addEventListener('click',()=> modal.classList.add('hidden'));
+modal.addEventListener('click',e=>{ if(e.target===modal) modal.classList.add('hidden'); });
+modal.querySelector('.submit').addEventListener('click',()=>{
   modal.classList.add('hidden');
+  modal.querySelector('textarea').value='';
   alert('Thanks for your feedback!');
 });
