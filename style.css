@@ -8,7 +8,7 @@ h1,h2,h3,h4{font-weight:700}
 .btn.primary{background:#0d79ff;color:#fff}
 
 /* ------------------ GRADIENT BACKGROUND ------------------ */
-.gradient{min-height:100vh;background:linear-gradient(135deg,#0d79ff 0%,#6c5ce7 50%,#64e8ba 100%)}
+.gradient{min-height:100vh;background:linear-gradient(135deg,#0d79ff 0%,#4F5BD5 50%,#29B6F6 100%)}
 
 /* ------------------ SPLIT LAYOUT ------------------ */
 .split{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;padding:3rem 1rem;gap:4rem}
